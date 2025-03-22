@@ -46,6 +46,7 @@ import Signup from './Components/Signup'
 import './App.css'
 import ChatPage from './Pages/ChatPage'
 import MessageContainer from './Components/Message/MessageContainer'
+import NotFound from './Pages/NotFound'
 
 const App = () => {
 
@@ -65,6 +66,7 @@ const App = () => {
         <Route path="/chat" element={<ChatPage/> } />
         <Route path="/chat/message" element={<MessageContainer />} />
       </Route>
+      <Route path='*' element={<NotFound/>}/>
       </Routes>
     </BrowserRouter>
     <Toaster position='top-center'/>
