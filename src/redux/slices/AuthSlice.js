@@ -5,6 +5,7 @@ import { removeLocalStorage, setLocalStorage } from "../../utils/LocalStorageUti
 const initialState={
     isAuthenticated:false,
     user:null,
+    token:null
 }
 
 const AuthSlice=createSlice({
@@ -14,6 +15,8 @@ const AuthSlice=createSlice({
         login:(state,action)=>{
             state.isAuthenticated = true;
             state.user=action.payload.user;
+            state.token=action.payload.token
+            setLocalStorage("token",action.payload.token)
             setLocalStorage("user",action.payload.user)
             setLocalStorage("isAuthenticated",true)
         },
@@ -21,6 +24,7 @@ const AuthSlice=createSlice({
             state.isAuthenticated = false;
             state.user=null
             removeLocalStorage("user")
+            removeLocalStorage("token")
             removeLocalStorage("isAuthenticated")
             localStorage.clear();
         }

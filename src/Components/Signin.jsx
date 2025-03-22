@@ -27,7 +27,7 @@ const Signin = () => {
         startTransition(async()=>{
             try {
                 const response = await signin(formData)
-                // console.log(response)
+                console.log(response)
                 if(response?.status ==="success"){
                     toast.success(response?.message)
                     dispatch(login(response))
