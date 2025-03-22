@@ -62,9 +62,9 @@ AxiosInstance.interceptors.request.use(
   (config) => {
     // Example: Get token from cookies and set it in headers
     const token = Cookies.get('jwt'); // Read cookie named 'auth_token'
-    console.log(token,"token")
+    // console.log(token,"token")
     if (token) {
-      console.log(token,"hello")
+      // console.log(token,"hello")
       config.headers.Authorization = `Bearer ${token}`;
     }
     return config;
